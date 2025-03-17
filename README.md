@@ -11,6 +11,6 @@ Nota: Para garantir a mesma experiência no desenvolvimento, recomenda-se que to
 desenvolvedores utilizem o PHP 8.4.5 e o XAMPP 8.2.12 ou a versão mais atualizada de cada um.
 
 <video width="320" height="240" controls>
-  <source src="TESTE TÉCNICO - PHARMAVIEWS.mp4" type="video/mp4">
+  <source src="./TESTE TÉCNICO - PHARMAVIEWS.mp4" type="video/mp4">
   Seu navegador não suporta o elemento de vídeo.
 </video>
