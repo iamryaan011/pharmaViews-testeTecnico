@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PharmaViews - Teste Técnico</title>
+
+    <link rel="stylesheet" href="../../public/styles/styles.css" />
+  </head>
+
+  <body>
+    <header>
+      <img
+        src="../../public/images/hamburguer-menu.png"
+        alt="Hamburguer Menu"
+        id="hamburguerMenu"
+      />
+      <img
+        src="../../public/images/logo.png"
+        alt="Logo PharmaViews"
+        id="logo"
+      />
+    </header>
+
+    <div id="container">
+      <h1>Gestão de Verbas</h1>
+
+      <form
+        method="post"
+        action="../../../backend/configs/processData.php"
+        id="mainForm"
+      >
+        <div class="inputContainer">
+          <label for="acao">Ação</label>
+          <select name="acao" required>
+            <option>Selecione o tipo de ação</option>
+            <option>Palestra</option>
+            <option>Evento</option>
+            <option>Apoio Gráfico</option>
+          </select>
+        </div>
+
+        <div class="inputContainer">
+          <label for="data">Data prevista</label>
+          <input type="date" name="data" required />
+        </div>
+
+        <div class="inputContainer">
+          <label for="investimento">Investimento previsto</label>
+          <span>R$</span>
+          <input
+            type="number"
+            name="investimento"
+            placeholder="0,00"
+            required
+            step="0.01"
+          />
+        </div>
+
+        <div id="buttonSection">
+          <button id="clearButton" onclick="clearFieldsButton()">
+            <img
+              src="../../public/images/rubber-icon.png"
+              alt="Limpar"
+              type="button"
+            />Limpar
+          </button>
+          <button id="addButton" type="submit" name="add">
+            <img src="../../public/images/add-icon.png" alt="Add" />Adicionar
+          </button>
+        </div>
+      </form>
+
+      <table>
+        <tr id="tableHeader">
+          <th>
+            <span
+              >Ação
+              <img src="../../public/images/filterA-icon.png" alt="filter icon"
+            /></span>
+          </th>
+          <th>
+            <span
+              >Data prevista
+              <img src="../../public/images/filterB-icon.png" alt="filter icon"
+            /></span>
+          </th>
+          <th>
+            <span
+              >Investimento previsto
+              <img src="../../public/images/filterB-icon.png" alt="filter icon"
+            /></span>
+          </th>
+          <th>Editar</th>
+          <th>Excluir</th>
+        </tr>
+
+        <tbody id="tbodyTableValues">
+          <tr class="tableValues"></tr>
+        </tbody>
+      </table>
+
+      <!--MODAL DE EDIT-->
+      <form
+        method="post"
+        action="../../../backend/configs/processData.php"
+        id="editModalForm"
+      >
+        <input type="hidden" name="id-edit" />
+
+        <img
+          src="../../public/images/delete-icon.png"
+          alt="close window"
+          id="closeButton"
+          onclick="closeModal()"
+        />
+
+        <h1>Editar Registro</h1>
+
+        <div class="inputContainer">
+          <label for="acao">Ação</label>
+          <select name="acao-edit" required>
+            <option>Selecione o tipo de ação</option>
+            <option>Palestra</option>
+            <option>Evento</option>
+            <option>Apoio Gráfico</option>
+          </select>
+        </div>
+
+        <div class="inputContainer">
+          <label for="data">Data prevista</label>
+          <input type="date" name="data-edit" required />
+        </div>
+
+        <div class="inputContainer">
+          <label for="investimento">Investimento previsto</label>
+          <span>R$</span>
+          <input
+            type="number"
+            name="investimento-edit"
+            placeholder="0,00"
+            required
+            step="0.01"
+          />
+        </div>
+
+        <div id="buttonSection">
+          <button id="editButton" type="submit" name="edit" style="margin: 0 auto;">
+            <img src="../../public/images/edit-icon-2.png" alt="Edit" />Editar
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <footer>
+      © 2024 <a href="http://pharmaviews.com.br/">PHARMAVIEWS.</a> Todos os
+      direitos reservados.
+    </footer>
+
+    <script src="../javascript/app.js"></script>
+  </body>
+</html>
